@@ -9,6 +9,10 @@ function PlayersDirectory() {
   this.players ={};
 }
 
+PlayersDirectory.prototype.addPlayer = function (player) {
+  this.players[player.name] = player;
+}
+
 function Player(name, currentRoundScore, totalScore) {
   this.name = name;
   this.currentRoundScore = currentRoundScore;
