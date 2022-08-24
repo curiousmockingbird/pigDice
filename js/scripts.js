@@ -11,10 +11,16 @@ function rollDice(minNum, maxNum) {
 }
 
 function TotalScore() {
-  this.playerScore = {}; 
+  this.playerScore = 0; 
 }
 TotalScore.prototype.addScore = function (rollDice) {
-  this.playerScore[player.name] = rollDice  
+/*   this.playerScore[player.name] = {};*/
+if (this.playerScore[player.name] = 0) { 
+/*   rollDice = 0; */
+  this.playerScore[player.name] += rollDice;
+} else {
+  this.playerScore[player.name] += rollDice;
+}
 }
 
 function PlayersDirectory() {
