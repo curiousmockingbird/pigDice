@@ -10,6 +10,13 @@ function rollDice(minNum, maxNum) {
   }
 }
 
+function TotalScore() {
+  this.playerScore = {}; 
+}
+TotalScore.prototype.addScore = function (rollDice) {
+  this.playerScore[player.name] = rollDice  
+}
+
 function PlayersDirectory() {
   this.players ={};
 }
@@ -23,4 +30,6 @@ function Player(name, currentRoundScore, totalScore) {
   this.currentRoundScore = currentRoundScore;
   this.totalScore = totalScore;
 }
+
+// User 
 
