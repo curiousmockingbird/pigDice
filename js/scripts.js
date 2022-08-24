@@ -4,3 +4,10 @@ function rollDice(minNum, maxNum) {
   let diceResult = Math.floor(Math.random() * (maxNum- minNum) + minNum);
   return diceResult;
 }
+
+function PlayersDirectory() {
+  this.players ={};
+}
+
+
+

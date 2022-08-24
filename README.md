@@ -16,3 +16,13 @@ rollDice(1,7);
 Expected Output: let diceResult = <a number between 1-6>
 
 ---------
+
+Describe: PlayersDirectory()
+
+Test: "It will create an object with a players property with an empty array as value."
+
+Code:
+PlayersDirectory();
+
+Expected Output: 
+> players: {};
