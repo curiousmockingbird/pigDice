@@ -27,6 +27,14 @@ PlayersDirectory();
 Expected Output: 
 > players: {};
 
+Test: "It will create a method for the PlayerDirectory() object prototype that will nest a Player object instance inside of the PlayerDirectory object instance."
+
+Code:
+PlayersDirectory.prototype.addPlayer(player);
+
+Expecteed Output:
+>players: {player};
+
 ---------
 
 Describe: Player()

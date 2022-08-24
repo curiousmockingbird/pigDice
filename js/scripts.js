@@ -11,6 +11,7 @@ function PlayersDirectory() {
 
 function Player(name, currentRoundScore, totalScore) {
   this.name = name;
-  this.current
+  this.currentRoundScore = currentRoundScore;
+  this.totalScore = totalScore;
 }
 
