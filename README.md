@@ -26,3 +26,17 @@ PlayersDirectory();
 
 Expected Output: 
 > players: {};
+
+---------
+
+Describe: Player()
+
+Test: "It will create an object prototype with a name property with a string value, a current round score with a number value, and a total score with a number value."
+
+Code:
+Player(name, currentRoundScore, totalScore);
+
+Expected Output:
+> name: name;
+> currentRoundScore: currentRoundScore;
+> totalScore: totalScore;

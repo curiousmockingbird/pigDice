@@ -8,3 +8,9 @@ function rollDice(minNum, maxNum) {
 function PlayersDirectory() {
   this.players ={};
 }
+
+function Player(name, currentRoundScore, totalScore) {
+  this.name = name;
+  this.current
+}
+
