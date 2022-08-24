@@ -2,7 +2,12 @@ function rollDice(minNum, maxNum) {
   minNum = Math.ceil(minNum);
   maxNum = Math.floor(maxNum);
   let diceResult = Math.floor(Math.random() * (maxNum- minNum) + minNum);
-  return diceResult;
+  console.log(diceResult);
+  if (diceResult > 1) {
+    return diceResult;
+  } else { 
+  return 0;
+  }
 }
 
 function PlayersDirectory() {

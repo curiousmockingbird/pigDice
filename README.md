@@ -15,6 +15,29 @@ rollDice(1,7);
 
 Expected Output: let diceResult = <a number between 1-6>
 
+
+Test: "It will return diceResult if it is greater than 1. If diceResult is 1, it will return 0."
+
+Code:
+rollDice(1,7);
+
+Expected Output: 
+(if diceResult = 1) 0;
+(if diceResult = 2-6) diceResult;
+
+
+---------
+Describe: rollDiceResults()
+
+Test: "If rollDice() is greater than 1, it will return the rollDice() result."
+
+Code:
+rollDiceResults(rollDice());
+
+Expected Output: 
+
+
+
 ---------
 
 Describe: PlayersDirectory()
