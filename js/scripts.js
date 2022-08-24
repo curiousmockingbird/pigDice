@@ -8,6 +8,3 @@ function rollDice(minNum, maxNum) {
 function PlayersDirectory() {
   this.players ={};
 }
-
-
-
