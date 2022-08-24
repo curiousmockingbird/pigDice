@@ -25,18 +25,16 @@ Expected Output:
 (if diceResult = 1) 0;
 (if diceResult = 2-6) diceResult;
 
+----------
+Describe: TotalScore(rollDice())
 
----------
-Describe: rollDiceResults()
-
-Test: "If rollDice() is greater than 1, it will return the rollDice() result."
+Test: "It will store new rollDice() results in an array as a property called playerScore."
 
 Code:
-rollDiceResults(rollDice());
+TotalScore(rollDice());
 
-Expected Output: 
-
-
+Expected Output:
+>playerScore: {rollDice(), rollDice(),  ....};
 
 ---------
 
@@ -71,3 +69,8 @@ Expected Output:
 > name: name;
 > currentRoundScore: currentRoundScore;
 > totalScore: totalScore;
+
+----------
+
+
+
