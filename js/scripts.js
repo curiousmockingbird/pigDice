@@ -9,24 +9,42 @@ function rollDice(minNum, maxNum) {
   }
 }
 
+/*
 function TotalScore() {
   this.playerScore = {}; 
 }
 
-TotalScore.prototype.addScore = function (rollDice) {
-  if (!this.playerScore[player.name]) { 
-    this.playerScore[player.name] = rollDice;
+TotalScore.prototype.addScorePlayer1 = function (rollDice) {
+  if (!this.playerScore[player1.name]) { 
+    this.playerScore[player1.name] = rollDice;
   } else {
-    this.playerScore[player.name] += rollDice;
+    this.playerScore[player1.name] += rollDice;
   }
 };
 
+TotalScore.prototype.addScorePlayer2 = function (rollDice) {
+  if (!this.playerScore[player2.name]) { 
+    this.playerScore[player2.name] = rollDice;
+  } else {
+    this.playerScore[player2.name] += rollDice;
+  }
+};
+*/
 function PlayersDirectory() {
   this.players ={};
 }
 
 PlayersDirectory.prototype.addPlayer = function (player) {
   this.players[player.name] = player;
+};
+
+Player.prototype.addScorePlayer1 = function (rollDice) {
+  if (!this.totalScore) { 
+    this.totalScore = rollDice;
+  } else {
+    this.totalScore += rollDice;
+  }
+
 };
 
 function Player(name, currentRoundScore, totalScore) {
@@ -36,12 +54,14 @@ function Player(name, currentRoundScore, totalScore) {
 }
 
 //UI Logic
+
+let playersDirectory = new PlayersDirectory();
+
 function handlePlayerFormSubmission (event) {
   event.preventDefault();
   let namePlayer1 = document.getElementById("name-player-1").value;
   let namePlayer2 = document.getElementById("name-player-2").value;
   
-  let playersDirectory = new PlayersDirectory();
   let player1 = new Player(namePlayer1, 0, 0);
   let player2 = new Player(namePlayer2, 0, 0);
 
@@ -50,12 +70,32 @@ function handlePlayerFormSubmission (event) {
 
   document.getElementById("players-name").setAttribute("class","hidden");
   document.getElementById("game").removeAttribute("class","hidden");
+  
+  let player1Name = document.getElementById("player-1-name");
+  let player2Name = document.getElementById("player-2-name");
+  player1Name.innerText = namePlayer1;
+  player2Name.innerText = namePlayer2;
 
-  console.log(playersDirectory,player1,player2);
+}
+
+function handleGameForm () {
+  
+/*   let totalScore = new TotalScore();*/
+  let namePlayer1 = document.getElementById("name-player-1").value;
+  let namePlayer2 = document.getElementById("name-player-2").value;
+  let diceRoll = document.getElementById("dice-roll");
+  let rollDiceNumber = rollDice(1,7);
+  
+  console.log(rollDiceNumber);
+  console.log(playersDirectory.players.[namePlayer1]);
+  playersDirectory.players.[namePlayer1].addScorePlayer1(rollDiceNumber);
+  diceRoll.innerText = rollDiceNumber;
 
 }
 
 window.addEventListener("load", function () {
   let playerForm = document.getElementById("players-name");
   playerForm.addEventListener("submit", handlePlayerFormSubmission);
+  let gameForm = document.getElementById("game-form");
+  gameForm.addEventListener("click", handleGameForm);
 })
