@@ -11,13 +11,13 @@ function rollDice(minNum, maxNum) {
 }
 
 function TotalScore() {
-  this.playerScore = 0; 
+  this.playerScore = {}; 
 }
 TotalScore.prototype.addScore = function (rollDice) {
 /*   this.playerScore[player.name] = {};*/
-if (this.playerScore[player.name] = 0) { 
+if (!this.playerScore[player.name]) { 
 /*   rollDice = 0; */
-  this.playerScore[player.name] += rollDice;
+  this.playerScore[player.name] = rollDice;
 } else {
   this.playerScore[player.name] += rollDice;
 }
@@ -36,6 +36,4 @@ function Player(name, currentRoundScore, totalScore) {
   this.currentRoundScore = currentRoundScore;
   this.totalScore = totalScore;
 }
-
-// User 
 
